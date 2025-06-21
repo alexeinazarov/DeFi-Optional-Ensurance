@@ -102,7 +102,7 @@ All steps are gas-efficient and run on existing keeper infra.
 #### Optional-Ensurance during crash
 | Quantity                                                    | Symbol / formula                                                  | Value |
 |-------------------------------------------------------------|-------------------------------------------------------------------|-------|
-| Up-front option cost                                        | $` X = \sum_i n_i P_i `$                                            |[THEORETICALLY](https://support.deribit.com/hc/en-us/articles/25944688327069-Inverse-Options) **\$ 3.5** per 0.8-ETH loan *(1 × 14-d 0.8 × S put + 0.25 × 7-d 0.9 × S put, σ₇d ≈ 79 %)* [3] |
+| Up-front option cost                                        | $` X = \sum_i n_i P_i `$                                            |[THEORETICALLY](https://support.deribit.com/hc/en-us/articles/25944688327069-Inverse-Options) **\$ 3.5** per 0.8-ETH loan *(1 × 14-d 0.8 × S put + 0.25 × 7-d 0.9 × S put, σ₇d ≈ 79 %)* |
 | Daily theta bleed                                           | $` Y = -\frac{1}{365}\sum_i n_i \theta_i `$                         | **\$ 1.0 ≈ 0.05 %/day ≈ 18 % p.a.** |
 | One-block crash tolerated (with +0.15 ETH extra collateral — ***to be adjusted later***) before rebalance | $` \displaystyle\Delta S^{\star} = -\frac{A_0 - L/0.8}{\beta S_0} `$ | **–14 %** |
 | After rebalance worst-case LTV                             | $\displaystyle\max_{x_t\ge1}\mathrm{LTV}(x_t)=\frac{0.80}{1.025}\approx0.781$  | **78 %** worst-case, even if ETH → $0$ before expiry |
