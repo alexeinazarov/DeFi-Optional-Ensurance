@@ -10,7 +10,7 @@ Built on the counter-cyclical nature of put options: as the underlying price fal
 An [**option**](https://www.investopedia.com/terms/o/option.asp) is a contract that gives its buyer the **right—but not the obligation**—to buy (*call*) or sell (*put*) an asset at a fixed **strike price** before or at a set expiry date.  
 
 Most crypto options are **European-style**, meaning they **auto-exercise at expiry** if in-the-money.  
-On venues like [**Deribit**](https://www.deribit.com/) and [**Lyra**](https://app.lyra.finance/), pricing generally follows the [**Black-Scholes model**](https://support.deribit.com/hc/en-us/articles/25944688327069-Inverse-Options), possibly adjusted for [jumps](https://www.fh-vie.ac.at/uploads/WP-081_2013.pdf) or [volatility smiles](https://www.investopedia.com/ask/answers/012015/what-volatility-smile.asp).
+On venues like [**Deribit**](https://www.deribit.com/) and [**Lyra**](https://app.lyra.finance/), pricing is sought to follow the [**Black-Scholes model**](https://support.deribit.com/hc/en-us/articles/25944688327069-Inverse-Options), possibly adjusted for [jumps](https://www.fh-vie.ac.at/uploads/WP-081_2013.pdf) or [volatility smiles](https://www.investopedia.com/ask/answers/012015/what-volatility-smile.asp).
 
 The *time-value decay* of a long put position is measured by **θ (theta)**.  Higher implied volatility (**σ**) ⇒ higher θ ⇒ dearer daily *“bleed”* (loss in value).
 
