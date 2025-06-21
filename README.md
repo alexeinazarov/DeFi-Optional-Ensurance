@@ -5,6 +5,8 @@ Built on the counter-cyclical nature of put options: as the underlying price fal
 > **DISCLAIMER**  
 > All numerical values of Optional-Ensurance parameters below are illustrative only.  
 > Final parameters are subject to rigorous testing, model validation, and ongoing calibration.
+#### At today’s implied volatility levels, the indicative cost to insure **1 ETH** of collateral is approximately **\$67.25 per month**.
+
 
 ### 0. Options 101
 An [**option**](https://www.investopedia.com/terms/o/option.asp) is a contract that gives its buyer the **right—but not the obligation**—to buy (*call*) or sell (*put*) an asset at a fixed **strike price** before or at a set expiry date.  
