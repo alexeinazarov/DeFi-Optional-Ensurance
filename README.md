@@ -12,7 +12,7 @@ An [**option**](https://www.investopedia.com/terms/o/option.asp) is a contract t
 Most crypto options are **European-style**, meaning they **auto-exercise at expiry** if in-the-money.  
 On venues like [**Deribit**](https://www.deribit.com/) and [**Lyra**](https://app.lyra.finance/), pricing generally follows the [**Black-Scholes model**](https://support.deribit.com/hc/en-us/articles/25944688327069-Inverse-Options), possibly adjusted for [jumps](https://www.fh-vie.ac.at/uploads/WP-081_2013.pdf) or [volatility smiles](https://www.investopedia.com/ask/answers/012015/what-volatility-smile.asp).
 
-Prices follow the Black-Scholes or other models; the *time-value decay* of a long put is measured by **θ (theta)**.  Higher implied volatility (**σ**) ⇒ higher θ ⇒ dearer daily bleed.
+The *time-value decay* of a long put position is measured by **θ (theta)**.  Higher implied volatility (**σ**) ⇒ higher θ ⇒ dearer daily *“bleed”* (loss in value).
 
 ###  1. Liquidity & availability disclaimer  *(figures as of 20 Jun 2025)*  
 
