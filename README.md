@@ -101,7 +101,7 @@ Let:
 All steps are gas-efficient and run on existing keeper infra.
 
 
-### 5. Example for Today’s headline numbers (ETH ≈ \$2,421.47, 20 Jun 2025 at 2035 EDT)
+### 5. Example for Today’s headline numbers (ETH ≈ \$2,421.47, 20 Jun 2025 at 2035 EDT, 4% drop in one day)
 #### Optional-Ensurance during crash
 | Quantity                                                    | Symbol / formula                                                  | Value |
 |-------------------------------------------------------------|-------------------------------------------------------------------|-------|
