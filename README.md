@@ -60,7 +60,7 @@ Let:
 - $`V_t = \sum_i n_i P_i(S_t,T_i)`$ = USD value of remaining puts
 - $` L `$ = debt principal (fixed at origination, typically $` L = 0.8 \times S_0 `$)
 - $` A_0 = C_0\,S_0 + V_0 `$
-- $` \mathrm{LTV}_t `$ = Loan-to-value at $`t`$ |
+- $` \mathrm{LTV}_t `$ = Loan-to-value at $`t`$ 
 - $\beta = 1+\sum_i \Delta_i$ (portfolio delta) is recalculated each night and after every keeper trade.
 - $x_{t} = 1 - \frac{S_t}{S_0}$
 ```math
