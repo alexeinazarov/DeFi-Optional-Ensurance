@@ -53,7 +53,7 @@ Execution at this size is therefore highly unlikely to move markets or drain liq
 Let:
 
 - $` C_0 `$ = initial collateral in ETH
-- $` C_t `$  collateral (in ETH) held at time $`t`$ |
+- $` C_t `$  collateral (in ETH) held at time $`t`$ 
 - $` S_t `$ = ETH spot price at time $`t`$  
 - $` P_i(S_t, T_i) `$ = price of the i-th put option at time $`t`$  
 - $` n_i `$ = notional (in ETH) of i-th put
