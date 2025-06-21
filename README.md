@@ -67,7 +67,7 @@ Let:
 - $` A_0 = C_0\,S_0 + V_0 `$
 - $\beta = 1+\sum_i \Delta_i$ (portfolio delta) is recalculated each night and after every keeper trade.
 - $x_{t} = 1 - \frac{S_t}{S_0}$
-- $` \mathrm{LTV}_t `$ = Loan-to-value ration at time $`t`$ (borrower's outstanding obligations defided by value of their assets):
+- $` \mathrm{LTV}_t `$ = Loan-to-value ration at time $`t`$ (borrower's outstanding obligations devided by value of their assets):
 ```math
 \boxed{\mathrm{LTV}_t = \frac{L}{C_t\,S_t + V_t}}
 ```
