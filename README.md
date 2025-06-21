@@ -2,6 +2,9 @@
 **Proposal:**  
 A mathematically capped loan-to-value ratio — even in the event of an instant ETH price collapse to \$0 before expiry.  
 Built on the counter-cyclical nature of put options: as the underlying price falls, the right to sell it at a fixed lower strike gains value.
+> **DISCLAIMER**  
+> All numerical values below are illustrative only.  
+> Final parameters are subject to rigorous testing, model validation, and ongoing calibration.
 
 ### 0. Options 101 + liquidity caveat  
 An [**option**](https://www.investopedia.com/terms/o/option.asp) is a contract that gives its buyer the **right—but not the obligation**—to buy (*call*) or sell (*put*) an asset at a fixed **strike price** before or at a set expiry date.  
