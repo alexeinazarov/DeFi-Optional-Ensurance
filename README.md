@@ -65,9 +65,9 @@ Let:
 - $`V_t = \sum_i n_i P_i(S_t,T_i)`$ = USD value of remaining puts
 - $` L `$ = debt principal (fixed at origination, typically $` L = 0.8 \times S_0 `$)
 - $` A_0 = C_0\,S_0 + V_0 `$
-- $` \mathrm{LTV}_t `$ = Loan-to-value at $`t`$ 
 - $\beta = 1+\sum_i \Delta_i$ (portfolio delta) is recalculated each night and after every keeper trade.
 - $x_{t} = 1 - \frac{S_t}{S_0}$
+- $` \mathrm{LTV}_t `$ = Loan-to-value ration at time $`t`$ (borrower's outstanding obligations defided by value of their assets):
 ```math
 \boxed{\mathrm{LTV}_t = \frac{L}{C_t\,S_t + V_t}}
 ```
@@ -108,7 +108,8 @@ All steps are gas-efficient and run on existing keeper infra.
 | Quantity                                                    | Symbol / formula                                                  | Value |
 |-------------------------------------------------------------|-------------------------------------------------------------------|-------|
 | Up-front option cost                                        | $` X_0 = \sum_i n_i P_i `$                                            |Theoretically, using [Black-Scholes formula](https://support.deribit.com/hc/en-us/articles/25944688327069-Inverse-Options) **\$ 16.36** per 0.8-ETH loan *(1 × 14-d 0.8 × S put + 0.25 × 7-d 0.9 × S put, σ₇d ≈ 79 %)*. <br>In practice ([derive.xyz](https://www.derive.xyz/options/eth?expiry=20250704), at 2035 EDT ) **$22.0** per 0.8-ETH loan *(1 × 14-d put K ≈ $2 000, mid-price $17.1 + 0.25 × 7-d put K ≈ $2 200, mid-price $19.6).*|
-| PV-adjusted premium (funds full 14-day hedge)¹ | $X_\text{PV} = X_0 + 0.25\,P_{7d}(0.9S_0)\,e^{-r\,7/365}$ | **\$22.0 + 4.85 = \$26.9** |
+| PV-adjusted premium (funds full 14-day hedge)¹ | $` X_\text{PV} = X_0 + 0.25 \cdot P_{7d}(0.9S_0)\,e^{-\frac{r \cdot 7}{365}} `$
+ | **\$22.0 + 4.85 = \$26.9** |
 | Daily theta bleed – informational only                                          | $` Y = -\frac{1}{365}\sum_i n_i \theta_i `$                         |Theoretically, using [Black-Scholes formula](https://support.deribit.com/hc/en-us/articles/25944688327069-Inverse-Options)  \$ 2.73 ≈ 0.141 %/day ≈ **51.5% p.a.**. <br>In practice ([derive.xyz](https://www.derive.xyz/options/eth?expiry=20250704), at 2035 EDT ) **$3.5 ≈ 0.17 % of loan per day ≈ 62.1 % p.a.** *(θ per contract: −$2.37 and −$4.60 ⇒ −$2.37 × 1 + −$4.60 × 0.25)*|
 | One-block crash tolerated (with +0.15 ETH extra collateral — ***to be adjusted later***) before rebalance | $` \displaystyle\Delta S^{\star} = -\frac{A_0 - L/0.8}{\beta S_0} `$ | **–14 %** |
 | After rebalance worst-case LTV                             | $\displaystyle\max_{x_t\ge1}\mathrm{LTV}(x_t)=\frac{0.80}{1.025}\approx0.781$  | **78 %** worst-case, even if ETH → $0$ before expiry |
