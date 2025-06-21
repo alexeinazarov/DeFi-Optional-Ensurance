@@ -115,5 +115,5 @@ All steps are gas-efficient and run on existing keeper infra.
 *Hard liquidation fires when loan-health = 0*  
 λ = 0.09 (loan\_discount).
 → effective  $` \text{max LTV} = \frac{1}{(1-λ)}=\frac{1}{0.91} ≈109.9 % `$.  
-With A = 100, N ≈ 400: [health](https://resources.curve.finance/crvusd/loan-concepts/#loan-health) =0 reached after **≈ –32 … –38 %** and hard liquidation is triggered
+With $A = 100$ and $N \approx 400$, [loan health](https://resources.curve.finance/crvusd/loan-concepts/#loan-health) reaches zero after approximately **65 to 80** bands are crossed — corresponding to a **32–38 %** price decline — at which point **hard liquidation** is triggered.
 
