@@ -6,7 +6,7 @@ Built on the counter-cyclical nature of put options: as the underlying price fal
 > All numerical values of Optional-Ensurance parameters below are illustrative only.  
 > Final parameters are subject to rigorous testing, model validation, and ongoing calibration.
 
-### 0. Options 101 + liquidity caveat  
+### 0. Options 101
 An [**option**](https://www.investopedia.com/terms/o/option.asp) is a contract that gives its buyer the **right—but not the obligation**—to buy (*call*) or sell (*put*) an asset at a fixed **strike price** before or at a set expiry date.  
 
 Most crypto options are **European-style**, meaning they **auto-exercise at expiry** if in-the-money.  
