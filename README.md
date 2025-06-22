@@ -118,7 +118,7 @@ All steps are gas-efficient and run on existing keeper infra.
 | After rebalance worst-case LTV                             | $\displaystyle\max_{x_t\ge1}\mathrm{LTV}(x_t)=\frac{0.80}{1.025}\approx0.781$  | **78 %** worst-case, even if ETH → $0$ before expiry |
 
 <sup>¹ To maintain delta neutrality using these strikes, the June 20 portfolio (2035 EDT, ETH = \$2,421.47) should have been **1 × 14d**(Δ = –0.093) + **5.23 × 7d**(Δ = –0.174), costing **\$119.61**, for a total portfolio value of **\$2,541.08**.  As of June 22, 1730 EDT (ETH = $2,188.54), using market mid-prices — 14d $2,000 put: **$49.45** (Δ = –0.25), 7d $2,200 put: **$96.30** (Δ = –0.50) — this hedge would be worth **$553.00**, making the full portfolio worth **$2,741.64**. This confirms that the delta hedge worked — though at a much higher cost, which merits further evaluation.
-For comparison, hedge allocated to 0.02 × 14d and 3.53 × 7d puts (Δ ≈ –0.614) would have cost **$69.53**  on June 20 and reached a value of **$339.20** by June 22 and grown to mitigating over ~61% of price decay, at significantly lower cost.
+For comparison, a portfolio of 0.02 × 14d and 3.53 × 7d puts (Δ ≈ –0.614) would have cost **$69.53**  on June 20 and reached a value of **$339.20** by June 22 and grown to mitigating over ~61% of price decay, at significantly lower cost.
 
 
 <sup>² Second 0.25-lot 7-day put must be re-bought on day 7; present-value at 5 % r ≈ \$ 4.85.</sup>
