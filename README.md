@@ -107,13 +107,15 @@ All steps are gas-efficient and run on existing keeper infra.
 #### Optional-Ensurance during crash
 | Quantity                                                    | Symbol / formula                                                  | Value |
 |-------------------------------------------------------------|-------------------------------------------------------------------|-------|
-| Up-front option cost                                        | $` X_0 = \sum_i n_i P_i `$                                            |Theoretically, using [Black-Scholes formula](https://support.deribit.com/hc/en-us/articles/25944688327069-Inverse-Options) **\$ 16.36** per 0.8-ETH loan *(1 × 14-d 0.8 × S put + 0.25 × 7-d 0.9 × S put, σ₇d ≈ 79 %)*. <br>In practice ([derive.xyz](https://www.derive.xyz/options/eth?expiry=20250704), at 2035 EDT ) **$22.0** per 0.8-ETH loan *(1 × 14-d put K ≈ $2 000, mid-price $17.1 + 0.25 × 7-d put K ≈ $2 200, mid-price $19.6).*|
-| PV-adjusted premium (funds full 14-day hedge)¹ | $` X_\text{PV} = X_0 + 0.25 \cdot P_{7d}(0.9S_0,14d)\,e^{-\frac{r \cdot 7}{365}} `$| **\$22.0 + 4.85 = \$26.85** |
+| Up-front option cost                                        | $` X_0 = \sum_i n_i P_i `$                                            |Theoretically, using [Black-Scholes formula](https://support.deribit.com/hc/en-us/articles/25944688327069-Inverse-Options) **\$ 16.36** per 0.8-ETH loan *(1 × 14-d 0.8 × S put + 0.25 × 7-d 0.9 × S put, σ₇d ≈ 79 %)*. <br>In practice ([derive.xyz](https://www.derive.xyz/options/eth?expiry=20250704), at 2035 EDT ) **$22.0** per 0.8-ETH loan *(1 × 14-d put K ≈ $2 000, mid-price $17.1 + 0.25 × 7-d put K ≈ $2 200, mid-price $19.6).*¹|
+| PV-adjusted premium (funds full 14-day hedge)² | $` X_\text{PV} = X_0 + 0.25 \cdot P_{7d}(0.9S_0,14d)\,e^{-\frac{r \cdot 7}{365}} `$| **\$22.0 + 4.85 = \$26.85** |
 | Daily theta bleed – informational only                                          | $` Y = -\frac{1}{365}\sum_i n_i \theta_i `$                         |Theoretically, using [Black-Scholes formula](https://support.deribit.com/hc/en-us/articles/25944688327069-Inverse-Options)  \$ 2.73 ≈ 0.141 %/day ≈ **51.5% p.a.**. <br>In practice ([derive.xyz](https://www.derive.xyz/options/eth?expiry=20250704), at 2035 EDT ) **$3.5 ≈ 0.17 % of loan per day ≈ 62.1 % p.a.** *(θ per contract: −$2.37 and −$4.60 ⇒ −$2.37 × 1 + −$4.60 × 0.25)*|
 | One-block crash tolerated (with +0.15 ETH extra collateral — ***to be adjusted later***) before rebalance | $` \displaystyle\Delta S^{\star} = -\frac{A_0 - L/0.8}{\beta S_0} `$ | **–14 %** |
 | After rebalance worst-case LTV                             | $\displaystyle\max_{x_t\ge1}\mathrm{LTV}(x_t)=\frac{0.80}{1.025}\approx0.781$  | **78 %** worst-case, even if ETH → $0$ before expiry |
 
-<sup>¹ Second 0.25-lot 7-day put must be re-bought on day 7; present-value at 5 % r ≈ \$ 4.85.</sup>
+<sup>¹ To maintain delta neutrality using these strikes, the June 20 portfolio (2035 EDT, ETH = \$2,421.47) should have been **1 × 14d + 5.23 × 7d**, costing **\$119.61**, for a total portfolio value of **\$2,541.08**.  As of June 22, 1730 EDT (ETH = $2,188.54), using market mid-prices — 14d $2,000 put: **$49.45** (Δ = –0.25), 7d $2,200 put: **$96.30** (Δ = –0.50) — this hedge would be worth **$553.00**, making the full portfolio worth **$2,741.64**. This confirms that the delta hedge worked — though at a much higher cost, which merits further evaluation. 
+
+<sup>² Second 0.25-lot 7-day put must be re-bought on day 7; present-value at 5 % r ≈ \$ 4.85.</sup>
 
 #### Comparing to LLAMMA crash math (λ = 9 %, 80 % start-LTV)
 *Hard liquidation fires when loan-health = 0*  
