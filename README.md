@@ -5,7 +5,11 @@ Built on the counter-cyclical nature of put options: as the underlying price fal
 > **DISCLAIMER**  
 > All numerical values of Optional-Ensurance parameters below are illustrative only.  
 > Final parameters are subject to rigorous testing, model validation, and ongoing calibration.
-#### At today’s implied volatility levels, the indicative cost to ensure **1 ETH** of collateral is approximately **\$53.70 per month**.
+#### At today’s implied volatility levels, the indicative cost to ensure meaningful downside coverage on **1 ETH** of collateral is approximately **\$123.70 per month**.
+
+>This document is shared for community input: both to assess the necessity of such a product and to collaboratively determine what a fair monthly cost might be.
+>Options offer a remarkably flexible range of payoff structures — and the author is confident in the ability to construct portfolios to meet target pricing.
+>Meeting lower price targets may require trade-offs, such as capping upside benefits or limiting payout duration.
 
 
 ### 0. Options 101
